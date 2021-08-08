@@ -1,0 +1,21 @@
+<form class="form-container" [formGroup]="addPostForm" (ngSubmit)="onSubmit()">
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Title</mat-label>
+      <input matInput placeholder="title" formControlName="title">
+      <mat-error *ngIf="getControl.title.errors?.required">{{requiredError}}</mat-error>
+      <mat-error *ngIf="getControl.title.errors?.minlength">{{minCharacterError}}</mat-error>
+    </mat-form-field>
+  </div>
+  
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Text</mat-label>
+      <textarea  matInput placeholder="body" formControlName="body"></textarea>
+      <mat-error *ngIf="getControl.body.errors?.required">{{requiredError}}</mat-error>
+      <mat-error *ngIf="getControl.body.errors?.minlength">{{minCharacterError}}</mat-error>
+    </mat-form-field>
+  </div>
+
+</form>
+<button mat-raised-button color="primary" class="add-post-submit" (click)="onSubmit()" >Submit</button>

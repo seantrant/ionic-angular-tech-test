@@ -1,0 +1,29 @@
+
+<div id="page-content-posts" class="page-content-posts">
+  <button mat-raised-button color="primary"(click)="addPost()" class="add-post-button">Add post</button>
+
+  <mat-tab-group  (selectedTabChange)="tabChanged($event)">
+    <mat-tab label="User posts">
+      <ul *ngFor="let post of loggedInUserPosts | slice:0:listEnd; let i=index" class="post-item">
+        <li>{{post.title}}</li>
+        <li>{{post.body}}</li>
+      </ul>
+      <div class="load-more-container">
+        <button mat-raised-button color="primary"(click)="loadMorePosts()" >Load more</button>
+      </div>
+    </mat-tab>
+    <mat-tab label="Other posts">
+      <div class="post-container">
+        <ul *ngFor="let post of otherUserPosts | slice:0:listEnd; let i=index" class="post-item">
+          <li>{{getUserName(post.userId)}}</li>
+          <li><strong>{{post.title}}</strong></li>
+          <li>{{post.body}}</li>
+        </ul>
+        <div class="load-more-container">
+          <button mat-raised-button color="primary"(click)="loadMorePosts()" >Load more</button>
+        </div>      
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+
+</div>

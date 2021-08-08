@@ -1,0 +1,30 @@
+<div class="page-content-centered">
+
+  <div class="login-page-content">
+
+    <div class="welcome-branding">
+      <img src="./assets/images/Accela_logo.png" alt="Accela logo" class="login-branding">
+      <h1>Welcome</h1>
+    </div>
+
+    <div class="login-section">
+      <p>Please enter email to log in</p>
+  
+      <form class="form-container" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="Email" [formControl]="emailFormControl">
+          <mat-hint>Email is case sensitive</mat-hint>
+          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </form>
+      <button mat-raised-button color="primary" (click)="onSubmit()" >Submit</button>
+    </div>
+
+  </div>
+</div>
+

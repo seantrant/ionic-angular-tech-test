@@ -1,0 +1,38 @@
+.page-content-posts{
+  display: flex;
+  justify-content: center;
+  height:100vh;
+  padding:2rem;
+}
+
+ul{
+  list-style: none;
+  border-radius: 5px;
+  border:1px solid #f6f6f6;
+  padding: 1rem;
+
+  li:first-child{
+    font-weight: 500;
+    margin-bottom:10px;
+  }
+}
+
+.mat-tab-body-content{
+  overflow-y: scroll ;
+}
+
+.load-more-container{
+  text-align: center;
+  margin:1rem;
+}    
+
+.add-post-button{
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  z-index: 10;
+}
+
+.mat-tab-group{
+  width:100%;
+}

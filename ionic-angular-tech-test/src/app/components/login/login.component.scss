@@ -1,0 +1,78 @@
+@mixin fadeIn($duration, $delay) {
+    opacity:0;
+    animation-name: fadeIn $duration;
+    animation-duration: $duration;   
+    animation-timing-function: ease-in-out;     
+    -webkit-animation: fadeIn $duration;
+    -moz-animation: fadeIn $duration;
+    -o-animation: fadeIn $duration;
+    -ms-animation: fadeIn $duration;
+    animation-delay: $delay;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+    0% {opacity:0;} 
+    100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+.page-content-centered{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:100vh;
+    padding:2rem;
+}
+
+.login-page-content{
+    
+    max-width:400px;
+    
+    .form-container{
+        
+        mat-form-field{
+            width:100%;
+        }
+    }
+    
+    button{
+        width:100%
+    }   
+}
+
+h1{
+    text-align:center;
+}
+
+p{
+    text-align:center;
+    margin-bottom:3rem;
+}
+
+.welcome-branding{
+    @include fadeIn(2s, 0s)
+}
+
+.login-section{
+    @include fadeIn(2s, 1s)
+}
